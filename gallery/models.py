@@ -20,7 +20,32 @@ class Image(models.Model):
     def update_image(self, **kwargs):
         self.objects.filter(id = self.pk).update(**kwargs)
 
-        
+    @classmethod
+    def all_pictures(cls):
+    pictures = cls.objects.all()
+        return pics
+
+    @classmethod
+    def pic_locations(cls):
+    pictures = cls.objects.order_by('location')
+        return pics
+
+    @classmethod
+    def pic_categories(cls):
+    pictures = cls.objects.order_by('category')
+        return pics
+
+    @classmethod
+    def get_pic(cls, id):
+    pic = cls.objects.get(id=id)
+        return pic
+
+    @classmethod
+    def search_by_category(cls, search_input):
+images = cls.objects.filter(category__name__icontains=search_input)
+        return images
+
+     
 class Meta:
         ordering = ['first_name']
 
