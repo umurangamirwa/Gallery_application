@@ -12,6 +12,7 @@ def welcome(request):
     return render(request, 'welcome.html')
 def gallery_of_day(request):
     date = dt.date.today()
+    news = Article.todays_gallery()
     return render(request, 'all-images/today-images.html', {"date": date,})
     # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
     day = convert_dates(date)
