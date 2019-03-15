@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-from django.http  import HttpResponse
-from django.shortcuts import render
-import datetime as dt
-from django.http  import HttpResponse,Http404
+
+from .models import Image,Category,Location
+from django.http  import Http404
 from django.shortcuts import render,redirect
-from .models import Image
+# from .models import Image
+
 # Create your views here.
 def welcome(request):
     # return HttpResponse('Welcome to my Gallery')
