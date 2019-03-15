@@ -25,4 +25,10 @@ class Article(models.Model):
     editor = models.ForeignKey(Editor, on_delete = models.CASCADE )  
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+    @classmethod
+    def todays_gallery(cls):
+        today = dt.date.today()
+        garelly = cls.objects.filter(pub_date__date = today)
+        return gallery
 # Create your models here.
