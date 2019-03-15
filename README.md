@@ -1,4 +1,4 @@
-# News pitches website
+# Gallery application
 # Created by:Umuranamirwa Marie Claire
 # Description
 Gallery application will help people to add the images implement the save, update and delete and search images by category. 
