@@ -22,8 +22,8 @@ class EditorTestClass(TestCase):
 
     def setUp(self):
         # Creating a new editor and saving it
-        self.james= Editor(first_name = 'James', last_name ='Muriuki', email ='james@moringaschool.com')
-        self.james.save_editor()
+        self.Mimy= Editor(first_name = 'Mimy', last_name ='Claire', email ='mimy@moringaschool.com')
+        self.Mimy.save_editor()
 
 # Creating a new tag and saving it
         self.new_tag = tags(name = 'testing')
@@ -38,5 +38,8 @@ class EditorTestClass(TestCase):
         Editor.objects.all().delete()
         tags.objects.all().delete()
         Article.objects.all().delete()
+    def test_get_gallery_today(self):
+        today_gallery = Article.todays_gallery()
+        self.assertTrue(len(today_gallery)>0)
 
 # Create your tests here.
