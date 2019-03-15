@@ -28,7 +28,7 @@ class Location(models.Model):
         @classmethod  
         def delete_location(cls,name):
             cls.objects.filter(name = name).delete()
-            # Location.objects.filter(id = self.pk).delete()
+            
     
         def update_location(self, **kwargs):
             self.objects.filter(id = self.pk).update(**kwargs)
@@ -40,9 +40,7 @@ class Image(models.Model):
     location = models.ForeignKey(Location,on_delete = models.CASCADE)
     category = models.ForeignKey(Category,on_delete = models.CASCADE)
     
-    # def __str__(self):
-    #     return self.first_name
-
+    
     def save_image(self):
         self.save()
 
@@ -80,8 +78,3 @@ class Image(models.Model):
         return gallery
 
      
-# class Meta:
-#         ordering = ['first_name']
-
-
-# Create your models here.
