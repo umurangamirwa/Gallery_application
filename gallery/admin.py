@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from .models import Editor,Article,tags
+from .models import images,category,location
 from django.contrib import admin
 
 class ArticleAdmin(admin.ModelAdmin):

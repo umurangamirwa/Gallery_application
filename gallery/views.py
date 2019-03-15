@@ -5,7 +5,7 @@ from django.shortcuts import render
 import datetime as dt
 from django.http  import HttpResponse,Http404
 from django.shortcuts import render,redirect
-from .models import Article
+from .models import images
 # Create your views here.
 def welcome(request):
     # return HttpResponse('Welcome to my Gallery')

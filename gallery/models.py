@@ -33,7 +33,7 @@ class Image(models.Model):
     @classmethod
     def pic_categories(cls):
     pictures = cls.objects.order_by('category')
-        return pics
+        return pictures
 
     @classmethod
     def get_pic(cls, id):
@@ -42,28 +42,40 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls, search_input):
-images = cls.objects.filter(category__name__icontains=search_input)
-        return images
+    images = cls.objects.filter(category__name__icontains=search_input)
+        return gallery
 
      
 class Meta:
         ordering = ['first_name']
 
-class Location(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length =30)
 
     def __str__(self):
         return self.name
-class Category(models.Model):
-    title = models.CharField(max_length =60)
-    post = models.TextField()
-    editor = models.ForeignKey(Editor, on_delete = models.CASCADE )  
-    tags = models.ManyToManyField(tags)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    def save_category(self):
+        self.save()
 
-    @classmethod
-    def todays_gallery(cls):
-        today = dt.date.today()
-        garelly = cls.objects.filter(pub_date__date = today)
-        return gallery
+    def delete_category(self):
+Category.objects.filter(id = self.pk).delete()
+    
+    def update_category(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)
+
+class Location(models.Model):
+        name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        Location.objects.filter(id = self.pk).delete()
+   
+    def update_location(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)
+
 # Create your models here.
