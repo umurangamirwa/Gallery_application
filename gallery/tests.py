@@ -42,4 +42,10 @@ class EditorTestClass(TestCase):
         today_gallery = Article.todays_gallery()
         self.assertTrue(len(today_gallery)>0)
 
+    def test_get_gallery_by_date(self):
+        test_date = '2017-03-17'
+        date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
+        gallery_by_date = Article.days_gallery(date)
+        self.assertTrue(len(gallery_by_date) == 0)
+
 # Create your tests here.
