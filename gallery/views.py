@@ -14,7 +14,7 @@ def display_location(request,location_id):
     location = Location.objects.get(id = location_id)
     images = Image.objects.filter(location = location.id)
     
-    return render(request,'location.html',{'location':location,'images':images})
+    return render(request,'all-images/location.html',{'location':location,'images':images})
 
 
 def search_category(request):
