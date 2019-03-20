@@ -8,7 +8,7 @@ Gallery application will help people to add the images implement the save, updat
 ## Setup/Installation Requirements
 To start using this project use the following commands:
 
-To clone this click here https://github.com/umurangamirwa/pitch
+To clone this click here https://github.com/umurangamirwa/Gallery_application.git
 
 ## Run this command lines in your terminal:
 
